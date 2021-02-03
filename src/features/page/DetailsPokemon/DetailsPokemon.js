@@ -2,10 +2,10 @@ import React, {useEffect, useState} from "react";
 import {ResultDetailsPokemon, ResultDetailsSpeciePokemon} from "../../redux/DetailsPokemonSlice";
 import { useSelector} from "react-redux";
 import {FrontCard} from "./frontCard";
-import pokeLogo from "../../../assets/pokeIcon.jpg";
 import {BackCard} from "./backCard";
 import ReactCardFlip from "react-card-flip";
 import "./styles/DetailsPokemonStyle.scss"
+import data from "../../../images.json";
 
 
 export const DetailsPokemon = () => {
@@ -50,12 +50,13 @@ export const DetailsPokemon = () => {
 
 
 
+
     const frontCard =  <div className="card border-0" style={{width: 18+"rem", height: "fit-content"}} >
         <FrontCard pokemonInfo={pokemonInfo} name={detailsName} description={detailsDescription} version={detailsVersion}/>
         <span onClick={()=>flip()} className="badge badge-secondary rounded-bottom" style={{cursor: "pointer"}}>
-                <img className="logo" src={pokeLogo} alt={"logo"}/>
+                <img className="logo" src={"/assets/pokeIcon.jpg"} alt={"logo"}/>
                 Plus d'information
-                <img className="logo" src={pokeLogo} alt={"logo"}/>
+                <img className="logo" src={"/assets/pokeIcon.jpg"} alt={"logo"}/>
             </span>
     </div>;
 

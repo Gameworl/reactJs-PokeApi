@@ -1,11 +1,31 @@
-import React from "react";
+import React, {useState} from "react";
+import {useDispatch} from "react-redux";
 
-export const SearchBar = () => {
+export const SearchBar = (props) => {
+    const [search, setSearch] = useState("")
+
+
+   const handleFilterTextChange = e => {
+        setSearch(e.target.value)
+
+    }
+
+    const handleSearch = () => {
+        props.fontion(search)
+    }
 
     return(
-        <form className="form-inline">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form className="form-inline d-flex justify-content-center m-3">
+            <div className="form-group mb-1">
+                <input
+                    type="text"
+                    placeholder="Search..."
+                    className={"form-control"}
+                    onChange={handleFilterTextChange}
+                />
+            </div>
+            <button type={"button"} className="btn btn-primary mb-1 bg-transparent" onClick={handleSearch}>Rechercher</button>
+
         </form>
     );
 }

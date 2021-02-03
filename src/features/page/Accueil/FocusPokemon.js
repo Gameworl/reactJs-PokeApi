@@ -16,7 +16,6 @@ import {useDispatch,useSelector} from "react-redux";
 import {DetailsRandomPokemon} from "./DetailsRandomPokemon";
 import './styles/FocusOnePokemonStyle.scss';
 import {Spinner} from "../Spinner/spinner";
-import refreshIcon from "../../../assets/refresh.png";
 
 
 export const FocusPokemon = () => {
@@ -55,7 +54,7 @@ export const FocusPokemon = () => {
     return(
         <div className="col d-flex justify-content-center background align-items-center">
             {statusSpecie === "succeeded"? <button onClick={refreshPage} className="float-right transparentB border-0" style={{ cursor: "pointer"}}>
-                <img src={refreshIcon} style={{height : 2+"rem", width: 2+"rem"}} alt={"refreshIcon"}/>
+                <img src={"/assets/refresh.png"} style={{height : 2+"rem", width: 2+"rem"}} alt={"refreshIcon"}/>
             </button>:""}
             {statusSpecie === "succeeded"? <DetailsRandomPokemon/> : <Spinner/>}
         </div>

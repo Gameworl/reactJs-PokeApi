@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import {ResultRandomPokemon,ResultRandomSpeciePokemon} from "../../redux/RandomPokemonSlice";
 import { useSelector} from "react-redux";
 import './styles/DetailFocusPokemonStyle.scss';
+
+
 export const DetailsRandomPokemon = () => {
     const pokemonInfo = useSelector(ResultRandomPokemon)
     const pokemonSpecie = useSelector(ResultRandomSpeciePokemon)

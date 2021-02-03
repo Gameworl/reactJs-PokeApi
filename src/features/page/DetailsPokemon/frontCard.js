@@ -1,7 +1,7 @@
 import React from "react";
-import {ImgType} from "./imgType";
 import {AddPokemon,RemovePokemon, resultsFavoriePokemon} from "../../redux/FavoriePokemonSlice";
 import {useDispatch, useSelector} from "react-redux";
+import data from "../../../images.json";
 export const FrontCard = (props) => {
     const dispatch = useDispatch()
     const ListFavorie = useSelector(resultsFavoriePokemon)
@@ -35,6 +35,10 @@ export const FrontCard = (props) => {
         return fav
     }
 
+    const imgType = props.pokemonInfo.types.map(type => {
+        return <img className={"type"} key={type.type.name} src={data[type.type.name][0].url} alt={type.type.name}/>
+    })
+
     return(
         <div>
             <div className="text-center transparent rounded p-1">
@@ -51,7 +55,7 @@ export const FrontCard = (props) => {
                     }
                 </div>
                 <h5 className="card-title "> {props.name}</h5>
-                <ImgType pokemonInfo ={props.pokemonInfo}/>
+                {imgType}
             </div>
             <div className={"row justify-content-center"}>
                 <div>

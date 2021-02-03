@@ -5,7 +5,6 @@ import {
     Route,
     Link,
 } from "react-router-dom";
-import logo from "../../assets/logo.png"
 import {FocusPokemon} from "../page/Accueil/FocusPokemon";
 import "./styles/navigationStyle.scss"
 import {PageListPokemon} from "../page/ListePokemon/PageListPokemon";
@@ -18,7 +17,7 @@ export const Navigation = () => {
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                         <Link className="navbar-brand" to="/">
-                            <img src={logo} width="30" height="30"
+                            <img src={"/assets/logo.png"} width="30" height="30"
                                  className="d-inline-block align-top" alt=""/>
                         </Link>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -46,7 +45,7 @@ export const Navigation = () => {
                         </div>
                     </Route>
                     <Route exact path="/">
-                        <div className={"backgroundAccueil"}>
+                        <div className={"backgroundAccueil"} style={{backgroundImage: "/background/background.jpg"}}>
                             <FocusPokemon/>
                         </div>
                     </Route>

@@ -12,7 +12,7 @@ import {
 import Pagination from "react-js-pagination";
 import "./styles/PageListPokemonStyle.scss"
 import {Spinner} from "../Spinner/spinner";
-import pokeLogo from "../../../assets/pokeIcon.jpg";
+
 import {
     Link,
 } from "react-router-dom";
@@ -67,9 +67,9 @@ export const PageListPokemon = () => {
                         <img className="pokeIcon " src={"https://img.pokemondb.net/sprites/home/normal/"+ pokemon.name+".png"} alt={"image de " + pokemon.name} />
                         <h5 className="card-title justify-content-center">{pokemon.name}</h5>
                         <Link to={"/details"} className="btn border-0 transparent" onClick={() =>handleClick(pokemon)}>
-                            <img className="logo" src={pokeLogo} alt={"logo"}/>
+                            <img className="logo" src={"/assets/pokeIcon.jpg"} alt={"logo"}/>
                             Détails
-                            <img className="logo" src={pokeLogo} alt={"logo"}/>
+                            <img className="logo" src={"/assets/pokeIcon.jpg"} alt={"logo"}/>
                         </Link>
                     </div>
                 )) : ""}
