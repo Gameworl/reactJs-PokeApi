@@ -1,6 +1,6 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {ListPokemon, resultsFavoriePokemon} from "../../redux/FavoriePokemonSlice";
+import {RemovePokemon, resultsFavoriePokemon} from "../../redux/FavoriePokemonSlice";
 import {SearchBar} from "./searchBar";
 
 
@@ -11,9 +11,8 @@ export const Mespokemon = () => {
 
     function favorite(pokemon) {
             dispatch(
-                ListPokemon({
-                    resultsFavorie: pokemon,
-                    type: "REMOVE"
+                RemovePokemon({
+                    resultsFavorie: pokemon
                 })
             )
     }

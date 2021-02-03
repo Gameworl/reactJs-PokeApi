@@ -1,25 +1,25 @@
 import React from "react";
 import {ImgType} from "./imgType";
-import {ListPokemon, resultsFavoriePokemon} from "../../redux/FavoriePokemonSlice";
+import {AddPokemon,RemovePokemon, resultsFavoriePokemon} from "../../redux/FavoriePokemonSlice";
 import {useDispatch, useSelector} from "react-redux";
 export const FrontCard = (props) => {
     const dispatch = useDispatch()
     const ListFavorie = useSelector(resultsFavoriePokemon)
 
     function favorite() {
-        console.log(ListFavorie)
-        if (!ListFavorie.includes(props.pokemonInfo)){
+        ListFavorie.map(pokemon => console.log(pokemon))
+        if (!ListFavorie.map(pokemon => pokemon.name === props.pokemonInfo.name).includes(true)){
+            console.log("ADD")
             dispatch(
-                ListPokemon({
-                    resultsFavorie: props.pokemonInfo,
-                    type: "ADD"
+                AddPokemon({
+                    resultsFavorie: props.pokemonInfo
                 })
             )
-        }else {
+        }else{
+            console.log("REMOVE")
             dispatch(
-                ListPokemon({
-                    resultsFavorie: props.pokemonInfo,
-                    type: "REMOVE"
+                RemovePokemon({
+                    resultsFavorie: props.pokemonInfo
                 })
             )
         }
@@ -28,7 +28,7 @@ export const FrontCard = (props) => {
     function listFavorie(){
         let fav = false
         ListFavorie.forEach(element => {
-            if (element === props.pokemonInfo){
+            if (element.name === props.pokemonInfo.name){
                 fav = true
             }
         })

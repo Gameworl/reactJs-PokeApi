@@ -65,11 +65,11 @@ export const DetailsPokemon = () => {
     </div>;
 
     return(
-        <view  className="mt-5">
+        <div  className="mt-5">
             <ReactCardFlip isFlipped={change} flipDirection="horizontal">
                 {frontCard}
                 {backCard}
             </ReactCardFlip>
-        </view>
+        </div>
     );
 }
