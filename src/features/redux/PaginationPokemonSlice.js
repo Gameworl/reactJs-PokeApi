@@ -4,7 +4,8 @@ import {client} from "../../api/client";
 const initialState = {
     resultPaginationPokemon : [],
     statusPaginationPokemonQuery: 'idle',
-    selected: ''
+    selected: '',
+    page: 1
 }
 
 
@@ -19,6 +20,9 @@ const paginationPokemon = createSlice({
     reducers: {
         selectedPokemon(state, action){
             state.selected = action.payload.selected
+        },
+        selectedPage(state, action){
+            state.page = action.payload.page
         }
     },
     extraReducers: {
@@ -32,8 +36,9 @@ const paginationPokemon = createSlice({
 
 
 //action
-export const { selectedPokemon } = paginationPokemon.actions
+export const { selectedPokemon, selectedPage } = paginationPokemon.actions
 export const ResultPaginationPokemon = state => state.paginationPokemon.resultPaginationPokemon
 export const StatusPagination = state => state.paginationPokemon.statusPaginationPokemonQuery
 export const selectedUrl = state => state.paginationPokemon.selected
+export const Page = state => state.paginationPokemon.page
 export default paginationPokemon.reducer

@@ -4,7 +4,9 @@ import {
     StatusPagination,
     queryAllPokemonPagination,
     ResultPaginationPokemon,
-    selectedPokemon
+    selectedPokemon,
+    selectedPage,
+    Page
 } from "../../redux/PaginationPokemonSlice";
 import {
     statusPokemonDetails
@@ -20,7 +22,8 @@ export const PageListPokemon = () => {
     const dispatch = useDispatch()
     const statusList = useSelector(StatusPagination)
     const PokemonList = useSelector(ResultPaginationPokemon)
-    const [Page, setpage] = useState(1);
+    const pageNumber = useSelector(Page)
+    const [page, setpage] = useState(pageNumber);
     useEffect(()=>{
         if (statusList === "idle"){
             dispatch(
@@ -30,8 +33,8 @@ export const PageListPokemon = () => {
     })
 
     function handlePageChange(pageNumber) {
-        if (Page >= 1){
-            if (pageNumber > Page){
+        if (page >= 1){
+            if (pageNumber > page){
                 dispatch(
                     queryAllPokemonPagination(PokemonList.next),
                 )
@@ -40,6 +43,11 @@ export const PageListPokemon = () => {
                     queryAllPokemonPagination(PokemonList.previous),
                 )
             }
+            dispatch(
+                selectedPage({
+                    page : pageNumber
+                })
+            )
             setpage(pageNumber)
         }
     }
@@ -80,7 +88,7 @@ export const PageListPokemon = () => {
                         hideFirstLastPages
                         prevPageText='prev'
                         nextPageText='next'
-                        activePage={Page}
+                        activePage={page}
                         itemsCountPerPage={10}
                         totalItemsCount={1118}
                         pageRangeDisplayed={3}
