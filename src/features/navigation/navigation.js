@@ -12,11 +12,21 @@ import {Pokemon} from "../page/DetailsPokemon/Pokemon";
 import {Mespokemon} from "../page/Favorie/mesProkemon";
 import {PageListeTypePokemon} from "../page/ListePokemon/PageListeTypePokemon";
 
+/**
+ * Barre de Navigation et redirection
+ * @returns {*}
+ * @constructor
+ */
 export const Navigation = () => {
     return(
         <Router >
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <button className="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
                         <Link className="navbar-brand" to="/">
                             <img src={"/assets/logo.png"} width="30" height="30"
                                  className="d-inline-block align-top" alt=""/>
@@ -35,7 +45,6 @@ export const Navigation = () => {
                             <li className="nav-item">
                                 <Link  className={"nav-link"} to="/MesPokemons">Mes Pokemons</Link>
                             </li>
-
                         </ul>
                     </div>
                 </nav>
@@ -46,7 +55,6 @@ export const Navigation = () => {
                     <Route exact path="/PokeList">
                         <div className={"backgroundList"}>
                             <PageListPokemon/>
-
                         </div>
                     </Route>
                     <Route exact path="/">
@@ -69,6 +77,7 @@ export const Navigation = () => {
                             <Mespokemon/>
                         </div>
                     </Route>
+                    {/*Si la route est non définit redirige vers 404*/}
                     <Route path="*">
                         <div className={"background404"}>
                         </div>

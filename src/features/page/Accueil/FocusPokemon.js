@@ -17,7 +17,11 @@ import {DetailsRandomPokemon} from "./DetailsRandomPokemon";
 import './styles/FocusOnePokemonStyle.scss';
 import {Spinner} from "../Spinner/spinner";
 
-
+/**
+ * Page contenant un pokemon choisis aléatoirement
+ * @returns {*}
+ * @constructor
+ */
 export const FocusPokemon = () => {
     const dispatch = useDispatch()
     const pokemonUrl = useSelector(ResultsPokemonList)
@@ -43,6 +47,9 @@ export const FocusPokemon = () => {
             )
         }
     })
+    /**
+     * Refresh le status des requêtes qui selectionne le pokemon aléatoire
+     */
     const refreshPage = () => {
         dispatch(
             statusPokemonRandom({

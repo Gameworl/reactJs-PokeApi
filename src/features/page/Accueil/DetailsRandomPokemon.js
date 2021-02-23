@@ -16,6 +16,9 @@ export const DetailsRandomPokemon = () => {
        getName()
     })
 
+    /**
+     * recupere le resumé d'un pokemon en Français
+     */
     const getResume = () =>{
         pokemonSpecie.flavor_text_entries.forEach(texte => {
             if (texte.language.name === "fr" ){
@@ -28,6 +31,9 @@ export const DetailsRandomPokemon = () => {
         })
     }
 
+    /**
+     * Récupère le nom français du pokemon
+     */
     const getName = () => {
         pokemonSpecie.names.forEach(name => {
             if(name.language.name === "fr"){
