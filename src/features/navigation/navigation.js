@@ -10,6 +10,7 @@ import "./styles/navigationStyle.scss"
 import {PageListPokemon} from "../page/ListePokemon/PageListPokemon";
 import {Pokemon} from "../page/DetailsPokemon/Pokemon";
 import {Mespokemon} from "../page/Favorie/mesProkemon";
+import {PageListeTypePokemon} from "../page/ListePokemon/PageListeTypePokemon";
 
 export const Navigation = () => {
     return(
@@ -29,8 +30,12 @@ export const Navigation = () => {
                                 <Link  className={"nav-link"} to="/PokeList">PokeList</Link>
                             </li>
                             <li className="nav-item">
+                                <Link  className={"nav-link"} to="/PokeListType">TypeList</Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link  className={"nav-link"} to="/MesPokemons">Mes Pokemons</Link>
                             </li>
+
                         </ul>
                     </div>
                 </nav>
@@ -54,13 +59,19 @@ export const Navigation = () => {
                             <Pokemon/>
                         </div>
                     </Route>
+                    <Route exact path="/PokeListType">
+                        <div className={"backgroundList"}>
+                            <PageListeTypePokemon/>
+                        </div>
+                    </Route>
                     <Route exact path="/MesPokemons">
                         <div className={"backgroundList"}>
                             <Mespokemon/>
                         </div>
                     </Route>
                     <Route path="*">
-
+                        <div className={"background404"}>
+                        </div>
                     </Route>
                 </Switch>
             </div>

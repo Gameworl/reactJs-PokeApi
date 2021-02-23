@@ -1,93 +1,20 @@
 {
-
-      "bug" : [
-        {
-          "url" : "assets/types/bug.png"
-        }
-      ],
-      "dark" : [
-        {
-          "url" : "assets/types/dark.png"
-        }
-      ],
-      "dragon" : [
-        {
-          "url" : "assets/types/dragon.png"
-        }
-      ],
-      "electric" : [
-        {
-          "url" : "assets/types/electric.png"
-        }
-      ],
-      "fairy" : [
-        {
-          "url" : "assets/types/fairy.png"
-        }
-      ],
-      "fighting" : [
-        {
-          "url" : "assets/types/fighting.png"
-        }
-      ],
-      "fire" : [
-        {
-          "url" : "assets/types/fire.png"
-        }
-      ],
-      "flying" : [
-        {
-          "url" : "assets/types/flying.png"
-        }
-      ],
-      "ghost" : [
-        {
-          "url" : "assets/types/ghost.png"
-        }
-      ],  "grass" : [
-      {
-        "url" : "assets/types/grass.png"
-      }
-    ],
-      "ground" : [
-        {
-          "url" : "assets/types/ground.png"
-        }
-      ],
-      "ice" : [
-        {
-          "url" : "assets/types/ice.png"
-        }
-      ],
-      "normal" : [
-        {
-          "url" : "assets/types/normal.png"
-        }
-      ],
-      "poison" : [
-        {
-          "url" : "assets/types/poison.png"
-        }
-      ],
-      "psychic" : [
-        {
-          "url" : "assets/types/psychic.png"
-        }
-      ],
-      "rock" : [
-        {
-          "url" : "assets/types/rock.png"
-        }
-      ],
-      "steel" : [
-        {
-          "url" : "assets/types/steel.png"
-        }
-      ],
-      "water" : [
-        {
-          "url" : "assets/types/water.png"
-        }
-      ]
-
+      "bug" : "assets/types/bug.png",
+      "dark" : "assets/types/dark.png",
+      "dragon" : "assets/types/dragon.png",
+      "electric" : "assets/types/electric.png",
+      "fairy" : "assets/types/fairy.png",
+      "fighting" : "assets/types/fighting.png",
+      "fire" : "assets/types/fire.png",
+      "flying" : "assets/types/flying.png",
+      "ghost" : "assets/types/ghost.png",
+      "grass" : "assets/types/grass.png",
+      "ground" : "assets/types/ground.png",
+      "ice" : "assets/types/ice.png",
+      "normal" : "assets/types/normal.png",
+      "poison" : "assets/types/poison.png",
+      "psychic" : "assets/types/psychic.png",
+      "rock" : "assets/types/rock.png",
+      "steel" : "assets/types/steel.png",
+      "water" : "assets/types/water.png"
 }

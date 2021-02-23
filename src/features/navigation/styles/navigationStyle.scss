@@ -5,11 +5,21 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow:auto;
 }
 
 .backgroundList{
   height: 100%;
   background: url('../../../assets/background/backgroundList.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow:auto;
+}
+.background404{
+  height: 100%;
+  background: url('../../../assets/background/404.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
