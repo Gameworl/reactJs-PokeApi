@@ -4,20 +4,14 @@ import {
     StatusPagination,
     queryAllPokemonPagination,
     ResultPaginationPokemon,
-    selectedPokemon,
     selectedPage,
     Page
 } from "../../redux/PaginationPokemonSlice";
-import {
-    statusPokemonDetails
-} from "../../redux/DetailsPokemonSlice";
 import Pagination from "react-js-pagination";
 import "./styles/PageListPokemonStyle.scss"
 import {Spinner} from "../Spinner/spinner";
 
-import {
-    Link,
-} from "react-router-dom";
+import {PokemonCard} from "./pokemonCard";
 export const PageListPokemon = () => {
     const dispatch = useDispatch()
     const statusList = useSelector(StatusPagination)
@@ -32,7 +26,7 @@ export const PageListPokemon = () => {
         }
     })
 
-    function handlePageChange(pageNumber) {
+    const handlePageChange = (pageNumber) =>{
         if (page >= 1){
             if (pageNumber > page){
                 dispatch(
@@ -51,19 +45,7 @@ export const PageListPokemon = () => {
             setpage(pageNumber)
         }
     }
-    const handleClick = (pokemon) => {
-        dispatch(
-            statusPokemonDetails({
-                StatusDetails: "idle",
-                StatusDetailsSpecie: "idle"
-            }),
-        )
-        dispatch(
-            selectedPokemon({
-                selected : pokemon.url
-            })
-        )
-    }
+
 
 
     return(
@@ -71,15 +53,7 @@ export const PageListPokemon = () => {
             {statusList === "succeeded"?
             <div className="row">
                 {statusList === "succeeded" ? PokemonList.results.map((pokemon) => (
-                    <div key={pokemon.name} className=" col-md-2 m-4 h-25 card align-items-center transparentB" >
-                        <img className="pokeIcon " src={"https://img.pokemondb.net/sprites/home/normal/"+ pokemon.name+".png"} alt={"image de " + pokemon.name} />
-                        <h5 className="card-title justify-content-center">{pokemon.name}</h5>
-                        <Link to={"/details"} className="btn border-0 transparent" onClick={() =>handleClick(pokemon)}>
-                            <img className="logo" src={"/assets/pokeIcon.jpg"} alt={"logo"}/>
-                            Détails
-                            <img className="logo" src={"/assets/pokeIcon.jpg"} alt={"logo"}/>
-                        </Link>
-                    </div>
+                    <PokemonCard pokemon={pokemon}/>
                 )) : ""}
                 <div className="m-auto h-auto">
                     <Pagination
