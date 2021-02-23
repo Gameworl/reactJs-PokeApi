@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useDispatch} from "react-redux";
+
 
 export const SearchBar = (props) => {
     const [search, setSearch] = useState("")
@@ -11,7 +11,7 @@ export const SearchBar = (props) => {
     }
 
     const handleSearch = () => {
-        props.fontion(search)
+        props.recherche(search)
     }
 
     return(

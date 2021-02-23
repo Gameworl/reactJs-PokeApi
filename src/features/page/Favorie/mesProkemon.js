@@ -11,6 +11,7 @@ export const Mespokemon = () => {
 
     const dispatch = useDispatch()
 
+
     const favorie = pokemon => {
             dispatch(
                 RemovePokemon({
@@ -27,7 +28,7 @@ export const Mespokemon = () => {
         <div className="d-flex ">
                 <div className="col">
                     <div className="row justify-content-center m-3" style={{ height: "fit-content"}}>
-                        <SearchBar fontion={maRecherche}/>
+                        <SearchBar recherche={maRecherche}/>
                     </div>
                     <div className="row" style={{ height: "fit-content"}}>
                         {
@@ -37,7 +38,7 @@ export const Mespokemon = () => {
                                     <span className="badge badge-danger badge-pill m-1 " style={{cursor: "pointer"}} onClick={() => favorie(pokemon)}>
                                         Relacher
                                     </span>
-                                    <img className="pokeIcon " src={"https://img.pokemondb.net/sprites/home/normal/"+ pokemon.name+".png"} alt={"image de " + pokemon.name} />
+                                    <img className="pokeIcon " src={pokemon.sprites.front_default} alt={"image de " + pokemon.name} />
                                     <h5 className="card-title justify-content-center">{pokemon.name}</h5>
                                 </div>
                             ))
