@@ -43,7 +43,7 @@ export const FocusPokemon = () => {
             )
         }
     })
-    function refreshPage() {
+    const refreshPage = () => {
         dispatch(
             statusPokemonRandom({
                 statusRandomPokemonQuery: "idle",

@@ -16,7 +16,7 @@ export const DetailsRandomPokemon = () => {
        getName()
     })
 
-    function getResume() {
+    const getResume = () =>{
         pokemonSpecie.flavor_text_entries.forEach(texte => {
             if (texte.language.name === "fr" ){
                 if (texte.flavor_text.length !== 0){
@@ -28,7 +28,7 @@ export const DetailsRandomPokemon = () => {
         })
     }
 
-    function getName() {
+    const getName = () => {
         pokemonSpecie.names.forEach(name => {
             if(name.language.name === "fr"){
                 setName(name.name)
