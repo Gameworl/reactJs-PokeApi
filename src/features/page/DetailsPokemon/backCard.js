@@ -23,17 +23,17 @@ export const BackCard = (props) => {
     return(
        <div>
            <div className="card-body rounded">
-               <p className="card-text">
+               <div className="card-text">
                    {props.pokemonSpecie.is_baby ?<p><span className="badge badge-success">bébé</span></p>  : ""}
                    {props.pokemonSpecie.is_legendary?<p><span className="badge badge-success">Légendaire</span></p>  : ""}
                    {props.pokemonSpecie.is_mythical?<p><span className="badge badge-success">mythique</span></p>  : ""}
                    { props.name} est le n° {props.pokemonInfo.id} dans le pokedex.
-               </p>
+               </div>
                <p className="card-text">
                    { props.name} pèse {parseInt(props.pokemonInfo.weight)/10} kg pour {props.pokemonInfo.height/10}m
                </p>
                <p className="card-text">
-                   On peut trouvez des { props.name}s dans les millieux de type {props.pokemonSpecie.habitat.name}, le taux de chance de le capturer est de {Math.round(props.pokemonSpecie.capture_rate/255*100)}%.
+                   On peut trouvez des { props.name}s dans les millieux de type {props.habitat}, le taux de chance de le capturer est de {Math.round(props.pokemonSpecie.capture_rate/255*100)}%.
                </p>
                <div className="card-text text-center">
                    <b>Les statistique de base de { props.name}</b>

@@ -5,7 +5,6 @@ import {FrontCard} from "./frontCard";
 import {BackCard} from "./backCard";
 import ReactCardFlip from "react-card-flip";
 import "./styles/DetailsPokemonStyle.scss"
-import data from "../../../images.json";
 
 
 export const DetailsPokemon = () => {
@@ -14,15 +13,22 @@ export const DetailsPokemon = () => {
 
 
     const [change, setChange] = useState(false)
-    let [detailsDescription, setDescription] = useState("")
-    let [detailsName, setName] = useState("")
-    let [detailsVersion, setVersion] = useState("")
+    let [detailsDescription, setDescription] = useState()
+    let [detailsName, setName] = useState()
+    let [detailsVersion, setVersion] = useState()
+    let [habitat, setHabitat] = useState("inconnue")
 
     useEffect(()=>{
         getDetailsResume()
         getDetailsName()
+        gethabitatName()
+        console.log(habitat)
     })
-    function getDetailsResume() {
+    const gethabitatName = () => {
+        if (pokemonSpecie.habitat !== null)
+        setHabitat(pokemonSpecie.habitat.name )
+    }
+    const getDetailsResume = () => {
         pokemonSpecie.flavor_text_entries.forEach(texte => {
             if (texte.language.name === "fr" ){
                 if (texte.flavor_text.length !== 0){
@@ -34,7 +40,7 @@ export const DetailsPokemon = () => {
         })
     }
 
-    function getDetailsName() {
+    const getDetailsName = () =>{
         pokemonSpecie.names.forEach(name => {
             if(name.language.name === "fr"){
                 setName(name.name)
@@ -43,7 +49,7 @@ export const DetailsPokemon = () => {
 
     }
 
-    function flip() {
+    const  flip=() =>{
         setChange(!change)
         console.log(change)
     }
@@ -57,12 +63,12 @@ export const DetailsPokemon = () => {
                 <img className="logo" src={"/assets/pokeIcon.jpg"} alt={"logo"}/>
                 Plus d'information
                 <img className="logo" src={"/assets/pokeIcon.jpg"} alt={"logo"}/>
-            </span>
+        </span>
     </div>;
 
 
     const backCard = <div className="card border-0" style={{width: 30+"rem", height: "fit-content"}} onClick={()=>flip()}>
-        <BackCard pokemonInfo={pokemonInfo} name={detailsName} pokemonSpecie={pokemonSpecie}/>
+        <BackCard pokemonInfo={pokemonInfo} name={detailsName} pokemonSpecie={pokemonSpecie} habitat={habitat}/>
     </div>;
 
     return(

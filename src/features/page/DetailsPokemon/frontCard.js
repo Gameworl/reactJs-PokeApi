@@ -6,7 +6,7 @@ export const FrontCard = (props) => {
     const dispatch = useDispatch()
     const ListFavorie = useSelector(resultsFavoriePokemon)
 
-    function favorite() {
+    const favorite= () =>{
         ListFavorie.map(pokemon => console.log(pokemon))
         if (!ListFavorie.map(pokemon => pokemon.name === props.pokemonInfo.name).includes(true)){
             console.log("ADD")
@@ -25,7 +25,7 @@ export const FrontCard = (props) => {
         }
     }
 
-    function listFavorie(){
+    const listFavorie = () => {
         let fav = false
         ListFavorie.forEach(element => {
             if (element.name === props.pokemonInfo.name){
@@ -36,7 +36,7 @@ export const FrontCard = (props) => {
     }
 
     const imgType = props.pokemonInfo.types.map(type => {
-        return <img className={"type"} key={type.type.name} src={data[type.type.name][0].url} alt={type.type.name}/>
+        return <img className={"type"} key={type.type.name} src={data[type.type.name]} alt={type.type.name}/>
     })
 
     return(
