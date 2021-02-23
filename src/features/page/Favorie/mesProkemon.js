@@ -4,14 +4,21 @@ import {RemovePokemon, resultsFavoriePokemon} from "../../redux/FavoriePokemonSl
 import {SearchBar} from "./searchBar";
 
 
-
+/**
+ * Page qui contient les favoris
+ * @returns {*}
+ * @constructor
+ */
 export const Mespokemon = () => {
    const pokemons = useSelector(resultsFavoriePokemon)
     const [texte,setTexte] = useState("")
 
     const dispatch = useDispatch()
 
-
+    /**
+     * Enleve le pokemon de la liste des favoris
+     * @param pokemon
+     */
     const favorie = pokemon => {
             dispatch(
                 RemovePokemon({

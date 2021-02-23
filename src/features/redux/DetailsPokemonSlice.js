@@ -8,7 +8,7 @@ const initialState = {
     statusDetailsSpeciePokemonQuery: 'idle',
 }
 
-
+//requete
 export const queryDetailsPokemonUrl = createAsyncThunk('detailsPokemon/pokemon',async query => {
     return await client.get(query)
 })

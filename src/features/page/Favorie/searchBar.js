@@ -1,15 +1,25 @@
 import React, {useState} from "react";
 
-
+/**
+ * Barre de recherche
+ * @param props
+ * @returns {*}
+ * @constructor
+ */
 export const SearchBar = (props) => {
     const [search, setSearch] = useState("")
 
-
+    /**
+     * recuperation du texte ecrit lettre par lettre
+     * @param e
+     */
    const handleFilterTextChange = e => {
         setSearch(e.target.value)
-
     }
 
+    /**
+     * envoie le mots rechercher
+     */
     const handleSearch = () => {
         props.recherche(search)
     }

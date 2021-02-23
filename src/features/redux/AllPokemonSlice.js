@@ -6,6 +6,7 @@ const initialState = {
     statusAllPokemonQuery: 'idle',
 }
 
+// requete
 export const queryAllPokemon = createAsyncThunk('allPokemon/',async () => {
     const response = await client.get('https://pokeapi.co/api/v2/pokemon?limit=1118')
     return response.results

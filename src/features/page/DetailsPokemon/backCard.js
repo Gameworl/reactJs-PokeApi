@@ -1,10 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as IconSolid from "@fortawesome/fontawesome-free-solid"
-import * as IconRegular from "@fortawesome/free-regular-svg-icons";
 
 export const BackCard = (props) => {
 
+    /**
+     * Calcule les statistique du pokemon et créer des progressBar pour chaque
+     */
     const statistiques = props.pokemonInfo.stats.map(stats => (
         <li key={stats.stat.name}> {stats.stat.name} :
             <div className="progress">
@@ -15,6 +17,9 @@ export const BackCard = (props) => {
         </li>
     ))
 
+    /**
+     * Creer des badges pour les attaque de base du pokemon
+     */
     const attaque = props.pokemonInfo.abilities.map(slot =>(
         <h4 key={slot.ability.name}>
         <span className="badge badge-info badge-pill">

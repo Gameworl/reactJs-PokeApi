@@ -8,7 +8,7 @@ const initialState = {
     statusRandomSpeciePokemonQuery: 'idle',
 }
 
-
+//requete
 export const queryRandomPokemon = createAsyncThunk('randomPokemon/focus',async query => {
     return await client.get(query)
 })

@@ -8,9 +8,14 @@ import {
 import Pagination from "react-js-pagination";
 import "./styles/PageListPokemonStyle.scss"
 import {Spinner} from "../Spinner/spinner";
-
 import {PokemonCard} from "./pokemonCard";
 import {SelectionTypeBar} from "./SelectionTypeBar";
+
+/**
+ * Page pour afficher la liste des pokemon par type
+ * @returns {*}
+ * @constructor
+ */
 export const PageListeTypePokemon = () => {
     const dispatch = useDispatch()
     const statusList = useSelector(StatusListeTypePokemon)
@@ -27,13 +32,20 @@ export const PageListeTypePokemon = () => {
         }
     })
 
+    /**
+     * set la page actuel
+     * @param pageNumber
+     */
     const handlePageChange = (pageNumber) => {
         if (page >= 1){
             setpage(pageNumber)
         }
     }
 
-
+    /**
+     * fait un apel en fonction du type selectionné
+     * @param texte
+     */
     const maRecherche= (texte) => {
         if (texte.lenght !== 0){
             dispatch(

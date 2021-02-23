@@ -1,4 +1,10 @@
 import React from "react";
+
+/**
+ * Gif faisant office de spinner
+ * @returns {*}
+ * @constructor
+ */
 export const Spinner = () => {
 
     return(

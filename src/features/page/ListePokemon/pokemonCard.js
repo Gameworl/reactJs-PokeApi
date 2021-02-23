@@ -3,6 +3,13 @@ import {Link} from "react-router-dom";
 import {statusPokemonDetails} from "../../redux/DetailsPokemonSlice";
 import {selectedPokemon} from "../../redux/PaginationPokemonSlice";
 import {useDispatch} from "react-redux";
+
+/**
+ * carte pokemon
+ * @param props
+ * @returns {*}
+ * @constructor
+ */
 export const PokemonCard = (props) => {
     const dispatch = useDispatch()
     const image = (urlImage) => {
@@ -10,6 +17,7 @@ export const PokemonCard = (props) => {
         let imagePokemon = image[6];
         return imagePokemon
     };
+
     const handleClick = (pokemon) => {
         dispatch(
             statusPokemonDetails({

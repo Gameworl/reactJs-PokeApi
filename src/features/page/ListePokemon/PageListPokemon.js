@@ -10,8 +10,13 @@ import {
 import Pagination from "react-js-pagination";
 import "./styles/PageListPokemonStyle.scss"
 import {Spinner} from "../Spinner/spinner";
-
 import {PokemonCard} from "./pokemonCard";
+
+/**
+ * Page contenant la liste de tout les pokemons
+ * @returns {*}
+ * @constructor
+ */
 export const PageListPokemon = () => {
     const dispatch = useDispatch()
     const statusList = useSelector(StatusPagination)
@@ -25,7 +30,10 @@ export const PageListPokemon = () => {
             )
         }
     })
-
+    /**
+     * fait des appels en fonction du bouton cliqué sur la pagination
+     * @param pageNumber
+     */
     const handlePageChange = (pageNumber) =>{
         if (page >= 1){
             if (pageNumber > page){

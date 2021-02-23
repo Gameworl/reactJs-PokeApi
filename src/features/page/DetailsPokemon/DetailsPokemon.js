@@ -24,22 +24,31 @@ export const DetailsPokemon = () => {
         gethabitatName()
         console.log(habitat)
     })
+    /**
+     * Verifie si le nom de l'habitat du pokemon est connue
+     */
     const gethabitatName = () => {
         if (pokemonSpecie.habitat !== null)
         setHabitat(pokemonSpecie.habitat.name )
     }
+    /**
+     * Recupère la description du pokemon en langue fr
+     */
     const getDetailsResume = () => {
         pokemonSpecie.flavor_text_entries.forEach(texte => {
             if (texte.language.name === "fr" ){
                 if (texte.flavor_text.length !== 0){
                     setDescription(texte.flavor_text)
                     setVersion(texte.version.name)
-                    return;
+
                 }
             }
         })
     }
 
+    /**
+     * recupere le nom du pokemon en francais
+     */
     const getDetailsName = () =>{
         pokemonSpecie.names.forEach(name => {
             if(name.language.name === "fr"){
@@ -49,14 +58,17 @@ export const DetailsPokemon = () => {
 
     }
 
+    /**
+     * gère le flip de la carte du pokemon
+     */
     const  flip=() =>{
         setChange(!change)
-        console.log(change)
     }
 
 
-
-
+    /**
+     * Front de la carte du pokemon
+     */
     const frontCard =  <div className="card border-0" style={{width: 18+"rem", height: "fit-content"}} >
         <FrontCard pokemonInfo={pokemonInfo} name={detailsName} description={detailsDescription} version={detailsVersion}/>
         <span onClick={()=>flip()} className="badge badge-secondary rounded-bottom" style={{cursor: "pointer"}}>
@@ -66,7 +78,9 @@ export const DetailsPokemon = () => {
         </span>
     </div>;
 
-
+    /**
+     * Back de la card du pokemon
+     */
     const backCard = <div className="card border-0" style={{width: 30+"rem", height: "fit-content"}} onClick={()=>flip()}>
         <BackCard pokemonInfo={pokemonInfo} name={detailsName} pokemonSpecie={pokemonSpecie} habitat={habitat}/>
     </div>;

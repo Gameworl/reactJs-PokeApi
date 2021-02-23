@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Select pour selectionner le type de pokemon voulue
+ * @param props
+ * @returns {*}
+ * @constructor
+ */
 export const SelectionTypeBar = (props) => {
 
     const handleSelect= e => {

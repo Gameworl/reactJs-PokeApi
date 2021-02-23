@@ -15,7 +15,11 @@ import {useDispatch,useSelector} from "react-redux";
 import {DetailsPokemon} from "./DetailsPokemon";
 import {Spinner} from "../Spinner/spinner";
 
-
+/**
+ * Page contenant le pokemon
+ * @returns {*}
+ * @constructor
+ */
 export const Pokemon = () => {
     const dispatch = useDispatch()
     const pokemonInfo = useSelector(ResultDetailsPokemon)

@@ -12,7 +12,7 @@ const initialState = {
     listeType: []
 }
 
-
+//requete
 export const queryAllPokemonPagination = createAsyncThunk('ListePokemon',async query => {
     return await client.get(query)
 })

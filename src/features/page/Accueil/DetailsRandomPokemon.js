@@ -25,7 +25,7 @@ export const DetailsRandomPokemon = () => {
                 if (texte.flavor_text.length !== 0){
                         setDescription(texte.flavor_text)
                         setVersion(texte.version.name)
-                        return;
+
                     }
                 }
         })

@@ -6,6 +6,9 @@ export const FrontCard = (props) => {
     const dispatch = useDispatch()
     const ListFavorie = useSelector(resultsFavoriePokemon)
 
+    /**
+     * gestion de la mise en favorie du pokemon
+     */
     const favorite= () =>{
         ListFavorie.map(pokemon => console.log(pokemon))
         if (!ListFavorie.map(pokemon => pokemon.name === props.pokemonInfo.name).includes(true)){
@@ -25,6 +28,10 @@ export const FrontCard = (props) => {
         }
     }
 
+    /**
+     * check si le pokemon est dans la liste des favories
+     * @returns {boolean}
+     */
     const listFavorie = () => {
         let fav = false
         ListFavorie.forEach(element => {
@@ -35,6 +42,9 @@ export const FrontCard = (props) => {
         return fav
     }
 
+    /**
+     * Affiche l'image du type en fontion de ceux du pokemon
+     */
     const imgType = props.pokemonInfo.types.map(type => {
         return <img className={"type"} key={type.type.name} src={data[type.type.name]} alt={type.type.name}/>
     })
