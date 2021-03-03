@@ -28,9 +28,9 @@ env:
 jobs:
   lint_and_test:
     runs-on: ubuntu-latest
-    name: lint and test
+    name: Lint and test
     steps:
-      - name: lint and test
+      - name: Test
       run: |
         npm run lint
         npm run test -- --coverage
