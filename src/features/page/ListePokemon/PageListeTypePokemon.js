@@ -57,9 +57,9 @@ export const PageListeTypePokemon = () => {
     return(
         <div className="d-flex ">
             <div className="col">
-                { statusType === "succeeded" ?<div className="row justify-content-center m-3" style={{ height: "fit-content"}}>
+                <div className="row justify-content-center m-3" style={{ height: "fit-content"}}>
                     <SelectionTypeBar types={TypeList} recherche={maRecherche}/>
-                </div>: ""}
+                </div>
 
             {statusList === "succeeded"?
                 <div className="row"  style={{ height: "fit-content"}}>
