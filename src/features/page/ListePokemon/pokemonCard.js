@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 import {statusPokemonDetails} from "../../redux/DetailsPokemonSlice";
 import {selectedPokemon} from "../../redux/PaginationPokemonSlice";
 import {useDispatch} from "react-redux";
