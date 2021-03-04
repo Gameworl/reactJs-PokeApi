@@ -1,6 +1,6 @@
 import React from 'react';
-import { render,screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
+import { render,screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import store from './app/store';
@@ -265,7 +265,6 @@ describe('Test Redux', ()=>{
     it('test RandomPokemonSlice retourne la state initial', () => {
         expect(RandomPokemonSlice(initialStateRandom, {})).toMatchSnapshot()
     })
-
 
 });
 
