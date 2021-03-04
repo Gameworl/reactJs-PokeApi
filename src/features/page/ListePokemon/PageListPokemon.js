@@ -59,7 +59,7 @@ export const PageListPokemon = () => {
     return(
         <div className="d-flex ">
             {statusList === "succeeded"?
-            <div className="row">
+            <div  className="row">
                 {statusList === "succeeded" ? PokemonList.results.map((pokemon) => (
                     <PokemonCard pokemon={pokemon}/>
                 )) : ""}
@@ -78,9 +78,7 @@ export const PageListPokemon = () => {
                     />
                 </div>
             </div>: <Spinner/>}
-
         </div>
-
     )
 }
 

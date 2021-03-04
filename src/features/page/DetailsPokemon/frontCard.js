@@ -10,7 +10,6 @@ export const FrontCard = (props) => {
      * gestion de la mise en favorie du pokemon
      */
     const favorite= () =>{
-        ListFavorie.map(pokemon => console.log(pokemon))
         if (!ListFavorie.map(pokemon => pokemon.name === props.pokemonInfo.name).includes(true)){
             console.log("ADD")
             dispatch(

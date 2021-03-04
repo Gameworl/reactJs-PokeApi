@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Redux test AllPokemonSlice retourne la state initial 1`] = `
+Object {
+  "resultsAllPokemon": Array [],
+  "statusAllPokemonQuery": "idle",
+}
+`;
+
+exports[`Test Redux test DetailsPokemonSlice retourne la state initial 1`] = `
+Object {
+  "resultDetailsPokemon": Array [],
+  "resultDetailsSpeciePokemon": Array [],
+  "statusDetailsPokemonQuery": "idle",
+  "statusDetailsSpeciePokemonQuery": "idle",
+}
+`;
+
+exports[`Test Redux test FavoriePokemonSlice retourne la state initial 1`] = `
+Object {
+  "resultsFavorie": Array [],
+}
+`;
+
+exports[`Test Redux test PaginationPokemonSlice retourne la state initial 1`] = `
+Object {
+  "listeType": Array [],
+  "page": 1,
+  "resultPaginationPokemon": Array [],
+  "resultlisteType": Array [],
+  "selected": "",
+  "statusPaginationPokemonQuery": "idle",
+  "statuslisteType": "idle",
+  "statuslisteTypePokemonQuery": "idle",
+}
+`;
+
+exports[`Test Redux test RandomPokemonSlice retourne la state initial 1`] = `
+Object {
+  "resultRandomPokemon": Array [],
+  "resultRandomSpeciePokemon": Array [],
+  "statusRandomPokemonQuery": "idle",
+  "statusRandomSpeciePokemonQuery": "idle",
+}
+`;
