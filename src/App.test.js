@@ -100,7 +100,7 @@ describe('Page Liste type Pokemon ', ()=>{
 
         expect(screen.queryByText(/Détails/)).toBeNull();
         await userEvent.type(screen.getByRole('option'), 'dragon');
-        expect(screen.findByText(/Détails/));
+         expect(screen.findByText(/Détails/));
     });
 
 });
