@@ -1,11 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Page Favorie Pokemon test retourne la state initial 1`] = `
-Object {
-  "resultsFavorie": Array [],
-}
-`;
-
 exports[`Test Redux test AllPokemonSlice retourne la state initial 1`] = `
 Object {
   "resultsAllPokemon": Array [],
