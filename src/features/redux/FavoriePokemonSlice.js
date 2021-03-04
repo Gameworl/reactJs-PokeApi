@@ -11,7 +11,6 @@ const favoriePokemon = createSlice({
     initialState,
     reducers: {
         AddPokemon(state, action){
-            console.log("Add slice")
           state.resultsFavorie.push(action.payload.resultsFavorie)
         },
         RemovePokemon(state, action){
