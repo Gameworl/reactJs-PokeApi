@@ -5,12 +5,12 @@ import {
     Route,
     Link,
 } from "react-router-dom";
-import {FocusPokemon} from "../page/Accueil/FocusPokemon";
+import {FocusPokemon} from "../pages/Accueil/FocusPokemon";
 import "./styles/navigationStyle.scss"
-import {PageListPokemon} from "../page/ListePokemon/PageListPokemon";
-import {Pokemon} from "../page/DetailsPokemon/Pokemon";
-import {Mespokemon} from "../page/Favorie/mesProkemon";
-import {PageListeTypePokemon} from "../page/ListePokemon/PageListeTypePokemon";
+import {PageListPokemon} from "../pages/ListePokemon/PageListPokemon";
+import {Pokemon} from "../pages/DetailsPokemon/Pokemon";
+import {Mespokemon} from "../pages/Favorie/mesProkemon";
+import {PageListeTypePokemon} from "../pages/ListePokemon/PageListeTypePokemon";
 
 /**
  * Barre de Navigation et redirection

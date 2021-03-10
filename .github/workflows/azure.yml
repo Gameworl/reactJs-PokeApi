@@ -18,7 +18,7 @@
 on:
   push:
     branches:
-      - develop
+      - master
 
 env:
   AZURE_WEBAPP_NAME: lp-devops-react   # set this to your application's name
